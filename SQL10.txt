@@ -1,0 +1,68 @@
+信息系统与数据库技术练习10答题卡
+
+班级：     19计算机信息管理1班
+姓名：     祝晚芳
+学号：     20190307117
+
+注：请将答案放置在序号下方。*/
+
+（一）
+1.
+USE Project
+
+
+2.
+SELECT Did,Ename,WorkDate,Esex
+FROM Employee
+WHERE Did='D001'
+ORDER BY WorkDate ASC
+
+
+3.
+SELECT *
+FROM Employee
+ORDER BY Did ASC,BasePay DESC
+
+
+
+4.
+SELECT Did,Ename,WorkDate,Esex,BasePay
+FROM Employee
+WHERE YEAR(WorkDate)>=2000
+ORDER BY Did DESC,WorkDate ASC
+
+
+5.
+SELECT MAX(Wages) AS 最高报酬,MIN(Wages) AS 最低报酬,SUM(Wages) AS 总报酬,AVG(Wages) AS 平均报酬
+FROM EP
+
+
+6.
+SELECT COUNT(*) AS 记录数,COUNT(DISTINCT Pid) AS 项目数
+FROM EP
+
+7.
+SELECT SUM(Wages) AS 总报酬,MIN(Wages) AS 最低报酬
+FROM EP
+WHERE Pid='A002'
+
+8.
+SELECT * INTO GGZ
+FROM Employee
+WHERE BasePay>=9700
+
+9.
+SELECT Eid,Ename,Esex INTO #MenE
+FROM Employee
+WHERE ESex=1
+
+10.
+SELECT Did,Ename,Esex,Bonus
+FROM Employee
+WHERE Did='D002'
+UNION
+SELECT Did,Ename,Esex,Bonus
+FROM Employee
+WHERE Esex=0
+
+
